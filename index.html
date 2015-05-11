@@ -162,7 +162,55 @@
 	</div>
 </div></section>
 
+<section class="slide shout"><div>
+	<h2>Форматы модулей</h2>
+</div></section>
 
+<section class="slide"><div>
+	<h2>CommonJS</h2>
+	<p><a href="http://wiki.commonjs.org/wiki/Modules" target="_blank">http://wiki.commonjs.org/wiki/Modules</a></p>
+	<ol class="next">
+		<li>Функция <code>require</code></li>
+		<li>Объект <code>exports</code></li>
+		<li>Объект <code>module</code></li>
+	</ol>
+</div></section>
+
+<section class="slide"><div>
+	<h2>Пример CommonJS-модуля</h2>
+	<pre>
+		<code><span class="fade">/* dictionary.js */</span></code>
+		<code>exports.hello = 'Hello World!';</code>
+	</pre>
+	<pre>
+		<code><span class="fade">/* app.js */</span></code>
+		<code>var dictionary = require('./dictionary.js');</code>
+		<code><span class="fade">// dictionary == {&quot;hello&quot;: &quot;Hello World!&quot;};</span></code>
+		<code>console.log(dictionary.hello);</code>
+	</pre>
+</div></section>
+
+<section class="slide"><div>
+	<h2>Пример CommonJS-модуля</h2>
+	<pre>
+		<code><span class="fade">/* dictionary.js */</span></code>
+		<code><mark class="important">exports</mark>.hello = 'Hello World!';</code>
+	</pre>
+	<pre>
+		<code><span class="fade">/* app.js */</span></code>
+		<code>var dictionary = <mark class="important">require</mark>('./dictionary.js');</code>
+		<code><span class="fade">// dictionary == {&quot;hello&quot;: &quot;Hello World!&quot;};</span></code>
+		<code>console.log(dictionary.hello);</code>
+	</pre>
+</div></section>
+
+<section class="slide"><div>
+	<h2>Особенности CommonJS-модуля</h2>
+	<ul>
+		<li class="next">Синхронная загрузка модулей.</li>
+		<li class="next">Код модулей не может быть исполнен в браузере без модификаций.</li>
+	</ul>
+</div></section>
 
 <div class="progress">
 	<div></div>
