@@ -1,0 +1,6 @@
+.slide.intro {
+    text-align: center;
+}
+.slide.intro:after {
+    content: '';
+}
