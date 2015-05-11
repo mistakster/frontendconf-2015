@@ -274,8 +274,114 @@
 </div></section>
 
 <section class="slide shout"><div>
-
+	<h2>Browserify</h2>
 </div></section>
+
+<section class="slide"><div>
+	<h2>Browserify</h2>
+	<pre>
+		<code>$ browserify main.js > bundle.js</code>
+	</pre>
+</div></section>
+
+<section class="slide"><div>
+	<h2>Browserify</h2>
+	<p>Трансформации:</p>
+	<ul>
+		<li>другие языки и диалекты;</li>
+		<li>шаблоны;</li>
+		<li>внедрение статических файлов;</li>
+		<li>использование «не модульного» кода.</li>
+	</ul>
+</div></section>
+
+<section class="slide"><div>
+	<h2>CoffeeScript</h2>
+	<pre>
+		<code>$ browserify -t <mark class="important">coffeeify</mark> main.coffee > bundle.js</code>
+	</pre>
+</div></section>
+
+<section class="slide"><div>
+	<h2>ECMAScript 2015 и JSX</h2>
+	<pre>
+		<code>$ browserify -t <mark class="important">babelify</mark> main.jsx > bundle.js</code>
+	</pre>
+</div></section>
+
+<section class="slide"><div>
+	<h2>Шаблоны Handlebars</h2>
+	<pre>
+		<code>/* main.js */</code>
+		<code>var template = require('./view.hbs');</code>
+		<code>var html = template({title: "Hello World!"});</code>
+	</pre>
+	<pre>
+		<code>$ browserify -t <mark class="important">browserify-handlebars</mark> main.js > bundle.js</code>
+	</pre>
+</div></section>
+
+<section class="slide"><div>
+	<h2>Статические файлы</h2>
+	<pre>
+		<code><span class="fade">/* main.js */</span></code>
+		<code>var fs = require('fs');</code>
+		<code>var text = fs.readFileSync(</code>
+		<code>  __dirname + '/data.txt', 'utf8'</code>
+		<code>);</code>
+	</pre>
+</div></section>
+
+<section class="slide"><div>
+	<h2>Статические файлы</h2>
+	<pre>
+		<code>$ browserify -t <mark class="important">brfs</mark> main.js > bundle.js</code>
+	</pre>
+	<pre>
+		<code><span class="fade">/* bundle.js */</span></code>
+		<code>var text = "Hello World!";</code>
+	</pre>
+</div></section>
+
+<section class="slide"><div>
+	<h2>Использование вместе с&nbsp;&laquo;не&nbsp;модульным&raquo; кодом</h2>
+	<pre>
+		<code>&quot;browser&quot;: {</code>
+		<code>  &quot;bootstrap&quot;: &quot;./assets/js/bootstrap.js&quot;</code>
+		<code>},</code>
+		<code>&quot;browserify-shim&quot;: {</code>
+		<code>  &quot;bootstrap&quot;: {&quot;depends&quot;: [&quot;jquery&quot;]}</code>
+		<code>}</code>
+	</pre>
+</div></section>
+
+<section class="slide"><div>
+	<h2>Использование вместе с&nbsp;&laquo;не&nbsp;модульным&raquo; кодом</h2>
+	<pre>
+		<code>/* main.js */</code>
+		<code>require('bootstrap');</code>
+	</pre>
+	<p>В упаковку автоматически будут добавлены все модули,
+		которые были перечислены в конфигурации</p>
+</div></section>
+
+<section class="slide"><div>
+	<h2>Использование вместе с&nbsp;&laquo;не&nbsp;модульным&raquo; кодом</h2>
+	<p>Если грузим jQuery из CDN, то упаковывать её не нужно.</p>
+	<pre>
+		<code>&quot;browserify-shim&quot;: {</code>
+		<code>  &quot;jquery&quot;: {&quot;exports&quot;: &quot;global:$&quot;}</code>
+		<code>}</code>
+	</pre>
+</div></section>
+
+<section class="slide"><div>
+	<h2>Watchify</h2>
+	<pre>
+		<code>$ watchify main.js -o bundle.js</code>
+	</pre>
+</div></section>
+
 
 <div class="progress">
 	<div></div>
