@@ -207,9 +207,10 @@
 <section class="slide"><div>
 	<h2>Особенности CommonJS-модуля</h2>
 	<p>Формат разрабатывался исключительно для выполнения на сервере или внутри приложения.</p>
-	<ul>
-		<li class="next">Синхронная загрузка модулей.</li>
-		<li class="next">Код модулей не может быть исполнен в браузере без модификаций.</li>
+	<ul class="next">
+		<li>один файл &mdash; один модуль;</li>
+		<li class="next">синхронная загрузка модулей;</li>
+		<li class="next">код модулей не может быть исполнен в браузере без модификаций.</li>
 	</ul>
 </div></section>
 
@@ -218,6 +219,7 @@
 	<p><a href="https://github.com/amdjs/amdjs-api" target="_blank">https://github.com/amdjs/amdjs-api</a></p>
 	<ol class="next">
 		<li>Функция <code>define</code></li>
+		<li class="next">Поле <code>define.amd</code> &mdash; объект</li>
 	</ol>
 </div></section>
 
@@ -257,11 +259,22 @@
 
 <section class="slide"><div>
 	<h2>Особенности AMD-модуля</h2>
+	<ul>
+		<li>код может исполнятся в браузере без модификаций;</li>
+		<li>возможна асинхронная загрузка модулей;</li>
+		<li>модуль может зависеть от данных любых типов&nbsp;&mdash;<br>текст, шаблоны, стили и т.п.</li>
+	</ul>
 </div></section>
 
 <section class="slide"><div>
 	<h2>UMD (Universal Module Definition)</h2>
 	<p><a href="https://github.com/umdjs/umd" target="_blank">https://github.com/umdjs/umd</a></p>
+	<p>Универсальная обёртка, которая в зависимости от окружения экспортирует модуль
+		как CommonJS или как AMD.</p>
+</div></section>
+
+<section class="slide shout"><div>
+
 </div></section>
 
 <div class="progress">
