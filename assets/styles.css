@@ -4,3 +4,24 @@
 .slide.intro:after {
     content: '';
 }
+
+.slide .pre code {
+    line-height: 1.5;
+}
+
+.slide .pre code:before {
+    content: '';
+}
+
+.col2-left {
+    float: left;
+    width: 48%;
+}
+.col2-right {
+    float: right;
+    width: 50%;
+}
+
+.fade {
+    color: #999;
+}

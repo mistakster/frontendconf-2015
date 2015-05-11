@@ -93,6 +93,77 @@
 	</ul>
 </div></section>
 
+<section class="slide shout"><div>
+	<h2>Порядок подключения отдельных фрагментов кода</h2>
+</div></section>
+
+<section class="slide"><div>
+	<h2>Раньше делали так:</h2>
+	<pre>
+		<code>&lt;script src=&quot;jquery.js&quot;&gt;&lt;/script&gt;</code>
+		<code>&lt;script src=&quot;plugin1.js&quot;&gt;&lt;/script&gt;</code>
+		<code>&lt;script src=&quot;plugin2.js&quot;&gt;&lt;/script&gt;</code>
+		<code>&lt;script src=&quot;plugin3.js&quot;&gt;&lt;/script&gt;</code>
+		<code>&lt;script src=&quot;init.js&quot;&gt;&lt;/script&gt;</code>
+	</pre>
+</div></section>
+
+<section class="slide"><div>
+	<h2>Потом стали делать так:</h2>
+	<pre>
+		<code>&lt;script src=&quot;bundle.js&quot;&gt;&lt;/script&gt;</code>
+	</pre>
+	<pre>
+		<code>$ cat jquery.js \</code>
+		<code>  plugin1.js plugin2.js plugin3.js \</code>
+		<code>  init.js \</code>
+		<code>    &gt; bundle.js</code>
+	</pre>
+</div></section>
+
+<section class="slide shout"><div>
+	<h2>Проблема: определять порядок автоматически</h2>
+</div></section>
+
+<section class="slide"><div>
+	<h2>Конфигурация зависимостей модулей</h2>
+	<ul>
+		<li>Dojo</li>
+		<li>YUI</li>
+		<li>Самоделки <span class="next">(Например,
+			<a href="https://github.com/mistakster/app-skeleton" target="_blank">https://github.com/mistakster/app-skeleton</a>)</span></li>
+	</ul>
+</div></section>
+
+<section class="slide"><div>
+	<h2>Дерево зависимостей</h2>
+	<div class="col2-left">
+		<pre class="pre">
+			<code>jquery</code>
+			<code>backbone</code>
+			<code><span class="fade">├─</span> jquery</code>
+			<code><span class="fade">└─</span> underscore</code>
+			<code>item-list</code>
+			<code><span class="fade">└─</span> backbone</code>
+			<code>search-widget</code>
+			<code><span class="fade">└─</span> autocomplete</code>
+			<code>   <span class="fade">└─</span> jquery</code>
+		</pre>
+	</div>
+	<div class="col2-right next">
+		<pre class="pre">
+			<code>jquery</code>
+			<code>underscore</code>
+			<code>backbone</code>
+			<code>item-list</code>
+			<code>autocomplete</code>
+			<code>search-widget</code>
+		</pre>
+	</div>
+</div></section>
+
+
+
 <div class="progress">
 	<div></div>
 </div>
