@@ -42,6 +42,47 @@
 	</div>
 </section>
 
+<section class="slide"><div>
+	<h2>Модульный код</h2>
+	<p>Приложение разбито на слабосвязанные между собой части.</p>
+	<p>Не захламняется глобальное пространсто имён.</p>
+</div></section>
+
+<section class="slide"><div>
+	<h2>Immediately invoked function expression</h2>
+	<pre>
+		<code>(function () {</code>
+		<code>  /* some useful code here */ } </code>
+		<code>}());</code>
+	</pre>
+</div></section>
+
+<section class="slide"><div>
+	<h2>Immediately invoked function expression</h2>
+	<pre>
+		<code>var FooBarModule = (function () {</code>
+		<code>  return {</code>
+		<code>    foo: function () { /* some useful code here */ },</code>
+		<code>    bar: function () { /* more code here */ } </code>
+		<code>  };</code>
+		<code>}());</code>
+	</pre>
+</div></section>
+
+<section class="slide"><div>
+	<h2>Плагины jQuery</h2>
+	<pre>
+		<code>jQuery.fn.foobar = function (options) {</code>
+		<code>  return this.each(function () {</code>
+		<code>    // plug-in code here</code>
+		<code>  });</code>
+		<code>};</code>
+	</pre>
+</div></section>
+
+
+
+
 <div class="progress">
 	<div></div>
 </div>
