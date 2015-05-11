@@ -206,10 +206,62 @@
 
 <section class="slide"><div>
 	<h2>Особенности CommonJS-модуля</h2>
+	<p>Формат разрабатывался исключительно для выполнения на сервере или внутри приложения.</p>
 	<ul>
 		<li class="next">Синхронная загрузка модулей.</li>
 		<li class="next">Код модулей не может быть исполнен в браузере без модификаций.</li>
 	</ul>
+</div></section>
+
+<section class="slide"><div>
+	<h2>AMD (Asynchronous Module Definition)</h2>
+	<p><a href="https://github.com/amdjs/amdjs-api" target="_blank">https://github.com/amdjs/amdjs-api</a></p>
+	<ol class="next">
+		<li>Функция <code>define</code></li>
+	</ol>
+</div></section>
+
+<section class="slide"><div>
+	<h2>Пример AMD-модуля</h2>
+	<pre>
+		<code>define('dictionary', {</code>
+		<code>  hello: 'Hello World!';</code>
+		<code>});</code>
+	</pre>
+	<pre>
+		<code>define('app', ['dictionary'], function (dictionary) {</code>
+		<code>  console.log(dictionary.hello);</code>
+		<code>});</code>
+	</pre>
+</div></section>
+
+<section class="slide"><div>
+	<h2>Специальные зависимости</h2>
+	<ol>
+		<li>Функция <code>require</code></li>
+		<li>Объект <code>exports</code></li>
+		<li>Объект <code>module</code></li>
+	</ol>
+</div></section>
+
+<section class="slide"><div>
+	<h2>AMD используется как обёртка для CommonJS</h2>
+	<pre>
+		<code>define(['require', 'exports', 'module'],</code>
+		<code>    function (require, exports, module) {</code>
+		<code>  var foo = require('foo'),</code>
+		<code>  exports.bar = function () {};</code>
+		<code>});</code>
+	</pre>
+</div></section>
+
+<section class="slide"><div>
+	<h2>Особенности AMD-модуля</h2>
+</div></section>
+
+<section class="slide"><div>
+	<h2>UMD (Universal Module Definition)</h2>
+	<p><a href="https://github.com/umdjs/umd" target="_blank">https://github.com/umdjs/umd</a></p>
 </div></section>
 
 <div class="progress">
