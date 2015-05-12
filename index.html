@@ -362,17 +362,17 @@
 		<code>require('bootstrap');</code>
 	</pre>
 	<p>В упаковку автоматически будут добавлены все модули,
-		которые были перечислены в конфигурации</p>
+		которые были перечислены в конфигурации для «bootstrap».</p>
 </div></section>
 
 <section class="slide"><div>
 	<h2>Использование вместе с&nbsp;&laquo;не&nbsp;модульным&raquo; кодом</h2>
-	<p>Если грузим jQuery из CDN, то упаковывать её не нужно.</p>
 	<pre>
 		<code>&quot;browserify-shim&quot;: {</code>
 		<code>  &quot;jquery&quot;: {&quot;exports&quot;: &quot;global:$&quot;}</code>
 		<code>}</code>
 	</pre>
+	<p>Если грузим jQuery из CDN, то упаковывать её не нужно.</p>
 </div></section>
 
 <section class="slide"><div>
