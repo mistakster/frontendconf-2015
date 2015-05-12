@@ -376,28 +376,53 @@
 </div></section>
 
 <section class="slide"><div>
-	<div>
-		<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 228 148"
-				style="width: 100%; height: 420px;">
-			<rect x="2" y="82" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" width="64" height="64"/>
-			<text transform="matrix(1 0 0 1 10.0005 96)" font-size="10">main.js</text>
-			<rect x="82" y="82" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" width="64" height="64"/>
-			<rect x="162.001" y="82" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" width="64" height="64"/>
-			<text transform="matrix(1 0 0 1 90.0005 96)" font-size="10">content.js</text>
-			<text transform="matrix(1 0 0 1 170.0005 96)" font-size="10">admin.js</text>
-			<rect x="2" y="2" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" width="224" height="64"/>
-			<rect x="10" y="26" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" width="64" height="32"/>
-			<rect x="82" y="26" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" width="64" height="32"/>
-			<rect x="154" y="26" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" width="64" height="32"/>
-			<text transform="matrix(1 0 0 1 10.0005 16)" font-size="10">bundle.js</text>
-			<text transform="matrix(1 0 0 1 28.8257 44.9355)" font-size="10">jquery</text>
-			<text transform="matrix(1 0 0 1 93.2056 44.9355)" font-size="10">backbone</text>
-			<text transform="matrix(1 0 0 1 162.4858 44.9355)" font-size="10">underscore</text>
-		</svg>
-	</div>
+	<h2>Ручное управление</h2>
+	<ul>
+		<li>Главная страница</li>
+		<li>Контентные страницы</li>
+		<li>«Админка»</li>
+	</ul>
+	<p>Общие для всех разделов модули можно вынести в отдельную упаковку.</p>
 </div></section>
 
+<section class="slide"><div>
+	<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 228 148"
+			style="width: 100%; height: 420px;">
+		<rect x="2" y="82" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" width="64" height="64"/>
+		<text transform="matrix(1 0 0 1 10.0005 96)" font-size="10">main.js</text>
+		<rect x="82" y="82" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" width="64" height="64"/>
+		<rect x="162.001" y="82" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" width="64" height="64"/>
+		<text transform="matrix(1 0 0 1 90.0005 96)" font-size="10">content.js</text>
+		<text transform="matrix(1 0 0 1 170.0005 96)" font-size="10">admin.js</text>
+		<rect x="2" y="2" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" width="224" height="64"/>
+		<rect x="10" y="26" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" width="64" height="32"/>
+		<rect x="82" y="26" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" width="64" height="32"/>
+		<rect x="154" y="26" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" width="64" height="32"/>
+		<text transform="matrix(1 0 0 1 10.0005 16)" font-size="10">bundle.js</text>
+		<text x="42" y="45" text-anchor="middle" font-size="10">jquery</text>
+		<text x="114" y="45" text-anchor="middle" font-size="10">backbone</text>
+		<text x="186" y="45" text-anchor="middle" font-size="10">underscore</text>
+	</svg>
+</div></section>
 
+<section class="slide"><div>
+	<h2>Упаковка с общими модулями</h2>
+	<pre>
+		<code>$ browserify \</code>
+		<code>  -r jquery -r backbone -r underscore \</code>
+		<code>  > libs.js</code>
+	</pre>
+</div></section>
+
+<section class="slide"><div>
+	<h2>Упаковка для каждого раздела</h2>
+	<pre>
+		<code>$ LIBS="-x jquery -x backbone -x underscore"</code>
+		<code>$ browserify $LIBS main.js > main.bundle.js</code>
+		<code>$ browserify $LIBS content.js > content.bundle.js</code>
+		<code>$ browserify $LIBS admin.js > admin.bundle.js</code>
+	</pre>
+</div></section>
 
 <section class="slide"><div>
 	<h2>Watchify</h2>
