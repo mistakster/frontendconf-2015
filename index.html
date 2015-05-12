@@ -273,6 +273,42 @@
 		как CommonJS или как AMD.</p>
 </div></section>
 
+<section class="slide"><div>
+	<h2>Модули ECMAScript 2015</h2>
+	<pre>
+		<code><span class="fade">/* dictionary.js */</span></code>
+		<code><mark class="important">export</mark> const hello = 'Hello World!';</code>
+	</pre>
+	<pre>
+		<code><span class="fade">/* app.js */</span></code>
+		<code><mark class="important">import</mark> * as dictionary from './dictionary.js';</code>
+		<code><span class="fade">// dictionary == {&quot;hello&quot;: &quot;Hello World!&quot;};</span></code>
+		<code>console.log(dictionary.hello);</code>
+	</pre>
+</div></section>
+
+<section class="slide"><div>
+	<h2>Модули ECMAScript 2015</h2>
+	<p>Модуль экспортирует функции, переменные или константы,
+		перед объявлением которых указано ключевое слово
+		<strong>export</strong>.</p>
+	<pre>
+		<code>export var foo = &quot;Hello World!&quot;</code>
+		<code>export function bar() { return &quot;foobar&quot;; };</code>
+		<code class="next">export <mark class="important">default</mark> function () { return &quot;default&quot;; };</code>
+	</pre>
+</div></section>
+
+<section class="slide"><div>
+	<h2>Модули ECMAScript 2015</h2>
+	<pre>
+		<code>import theDefault from './foobar.js';</code>
+		<code class="next">import {foo, bar} from './foobar.js';</code>
+		<code class="next">import {foo as fooVariable} from './foobar.js';</code>
+		<code class="next">import * as foobar from './foobar.js';</code>
+	</pre>
+</div></section>
+
 <section class="slide shout"><div>
 	<h2>npm</h2>
 </div></section>
