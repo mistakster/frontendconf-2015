@@ -1,8 +1,15 @@
 .slide.intro {
     text-align: center;
+	color: white;
+	background: #52A2DF;
 }
 .slide.intro:after {
     content: '';
+}
+
+.slide.intro h2 {
+	font: 80px/1 'Open Sans Light', sans-serif;
+	margin-top: 80px;
 }
 
 .slide .pre code {
