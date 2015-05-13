@@ -542,8 +542,50 @@
 </div></section>
 
 <section class="slide"><div>
-
+	<h2>Webpack</h2>
+	<ul>
+		<li>CommonJS и AMD модули;</li>
+		<li class="next">загрузчики любых статических ресурсов;</li>
+		<li class="next">плагины для оптимизации;</li>
+		<li class="next">может генерировать несколько упаковок;</li>
+		<li class="next">инструменты для разработчика.</li>
+	</ul>
 </div></section>
+
+<section class="slide"><div>
+	<h2>Загрузчики</h2>
+	<p>Нужны для конвертирования любых статических ресурсов в&nbsp;JavaScript.</p>
+	<pre class="next">
+		<code>var template = require('jade!./template.jade');</code>
+		<code>require('style!css!less!./my-widget.less');</code>
+	</pre>
+</div></section>
+
+<section class="slide"><div>
+	<h2>Загрузчики</h2>
+	<p>Конфигурация загрузчиков через <strong>webpack.config.js</strong>:</p>
+	<pre class=&quot;next&quot;>
+		<code>{ &quot;module&quot;:</code>
+		<code>  { &quot;loaders&quot;: [</code>
+		<code>    { &quot;test&quot;: /\.jade$/, &quot;loader&quot;: &quot;jade-loader&quot; }</code>
+		<code>  ]}</code>
+		<code>}</code>
+	</pre>
+</div></section>
+
+<section class="slide"><div>
+	<h2>Плагины</h2>
+	<ul>
+		<li class="next">ContextReplacementPlugin</li>
+		<li class="next">PrefetchPlugin</li>
+		<li class="next">DedupePlugin</li>
+		<li class="next">UglifyJsPlugin</li>
+		<li class="next">CommonsChunkPlugin</li>
+		<li class="next">DefinePlugin</li>
+		<li class="next">HotModuleReplacementPlugin</li>
+	</ul>
+</div></section>
+
 
 <div class="progress">
 	<div></div>
