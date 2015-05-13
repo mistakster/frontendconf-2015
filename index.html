@@ -50,7 +50,7 @@
 	<h2>Immediately invoked function expression</h2>
 	<pre>
 		<code>(function () {</code>
-		<code>  /* some useful code here */ } </code>
+		<code>  <span class="fade">/* some useful code here */</span></code>
 		<code>}());</code>
 	</pre>
 </div></section>
@@ -60,8 +60,8 @@
 	<pre>
 		<code>var FooBarModule = (function () {</code>
 		<code>  return {</code>
-		<code>    foo: function () { /* some useful code here */ },</code>
-		<code>    bar: function () { /* more code here */ } </code>
+		<code>    foo: function () { <span class="fade">/* some useful code here */</span> },</code>
+		<code>    bar: function () { <span class="fade">/* more code here */</span> } </code>
 		<code>  };</code>
 		<code>}());</code>
 	</pre>
@@ -407,7 +407,7 @@
 <section class="slide"><div>
 	<h2>Шаблоны Handlebars</h2>
 	<pre>
-		<code>/* main.js */</code>
+		<code><span class="fade">/* main.js */</span></code>
 		<code>var template = require('./view.hbs');</code>
 		<code>var html = template({title: "Hello World!"});</code>
 	</pre>
@@ -453,7 +453,7 @@
 <section class="slide"><div>
 	<h2>Использование вместе с&nbsp;&laquo;не&nbsp;модульным&raquo; кодом</h2>
 	<pre>
-		<code>/* main.js */</code>
+		<code><span class="fade">/* main.js */</span></code>
 		<code>require('bootstrap');</code>
 	</pre>
 	<p>В упаковку автоматически будут добавлены все модули,
