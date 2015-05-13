@@ -586,6 +586,33 @@
 	</ul>
 </div></section>
 
+<section class="slide"><div>
+	<h2>Несколько упаковок</h2>
+	<p>Некоторые загрузчики и плагины могут создавать дополнительные файлы.</p>
+	<p class="next">Например, <strong>extract-text-webpack-plugin</strong> может
+		сохранить стили для модулей в отдельный CSS-файл, а не вставлять их на страницу.</p>
+</div></section>
+
+<section class="slide"><div>
+	<h2>«Code splitting»</h2>
+	<pre>
+		<code>if (!window.Intl) {</code>
+		<code>  var waitForChunk = require('bundle!./intl.js);</code>
+		<code>  waitForChunk(callback);</code>
+		<code>} else {</code>
+		<code>  callback();</code>
+		<code>}</code>
+	</pre>
+</div></section>
+
+<section class="slide"><div>
+	<h2>Webpack</h2>
+	<p><a href="http://webpack.github.io/" target="_blank">http://webpack.github.io/</a></p>
+</div></section>
+
+<section class="slide shout"><div>
+	<h2>Выводы</h2>
+</div></section>
 
 <div class="progress">
 	<div></div>
