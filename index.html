@@ -101,9 +101,11 @@
 	</pre>
 </div></section>
 
+<!--
 <section class="slide cover"><div>
 	<img src="assets/images/nothing-changes.jpg" alt="Ничего не меняется">
 </div></section>
+-->
 
 <section class="slide shout"><div>
 	<h2>Проблема: определять порядок автоматически</h2>
@@ -271,64 +273,9 @@
 	<h2>Инструменты</h2>
 </div></section>
 
-<section class="slide shout"><div>
-	<h2>npm</h2>
-</div></section>
-
 <section class="slide"><div>
-	<h2>npm</h2>
-	<ul>
-		<li>JavaScript в формате <strong>CommonJS</strong> или <strong>UMD</strong>;</li>
-		<li class="next">конфигурация в <strong>package.json</strong>;</li>
-		<li class="next">пакеты устанавливаются в <strong>node_modules</strong>;</li>
-		<li class="next"><strong>древовидная структура</strong> зависимостей;</li>
-		<li class="next">пакет может содержать <strong>любой</strong> другой вспомогательный контент.</li>
-	</ul>
-</div></section>
-
-<section class="slide shout"><div>
-	<h2>Bower</h2>
-</div></section>
-
-<section class="slide"><div>
-	<h2>Bower</h2>
-	<ul>
-		<li>JavaScript в формате <strong>AMD</strong> или <strong>UMD</strong>;</li>
-		<li class="next">конфигурация в <strong>bower.json</strong>;</li>
-		<li class="next">пакеты устанавливаются в <strong>bower_components</strong>;</li>
-		<li class="next"><strong>плоский список</strong> зависимостей;</li>
-		<li class="next">пакет может содержать <strong>любой</strong> другой вспомогательный контент.</li>
-	</ul>
-</div></section>
-
-<section class="slide"><div>
-	<h2>npm vs. Bower</h2>
-	<table>
-		<thead>
-			<tr>
-				<th style="width: 42%;">&nbsp;</th>
-				<th style="width: 29%; text-align: center;">npm</th>
-				<th style="width: 29%; text-align: center;">Bower</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<th>Пакеты</th>
-				<td style="text-align: center;">CommonJS</td>
-				<td style="text-align: center;">AMD</td>
-			</tr>
-			<tr>
-				<th>Зависимости</th>
-				<td style="text-align: center;">дерево</td>
-				<td style="text-align: center;">список</td>
-			</tr>
-			<tr>
-				<th>Модули разных версий</th>
-				<td style="text-align: center;">да</td>
-				<td style="text-align: center;">нет</td>
-			</tr>
-		</tbody>
-	</table>
+	<h2>Инструменты</h2>
+	<img src="assets/images/browserify-webpack.png" style="width: 100%;">
 </div></section>
 
 <section class="slide shout"><div>
@@ -572,8 +519,86 @@
 	<p><a href="http://webpack.github.io/" target="_blank">http://webpack.github.io/</a></p>
 </div></section>
 
+<section class="slide cover"><div>
+	<video preload="auto" autoplay loop style="width: 1024px; height: 640px;">
+		<source src="assets/video/good_suitcase_speed.mp4" type="video/mp4">
+	</video>
+</div></section>
+
 <section class="slide shout"><div>
-	<h2>Выводы</h2>
+	<h2>Где хранить модули?!</h2>
+</div></section>
+
+<section class="slide shout"><div>
+	<h2>npm</h2>
+</div></section>
+
+<section class="slide"><div>
+	<h2>npm</h2>
+	<ul>
+		<li>JavaScript в формате <strong>CommonJS</strong> или <strong>UMD</strong>;</li>
+		<li class="next">конфигурация в <strong>package.json</strong>;</li>
+		<li class="next">пакеты устанавливаются в <strong>node_modules</strong>;</li>
+		<li class="next"><strong>древовидная структура</strong> зависимостей;</li>
+		<li class="next">пакет может содержать <strong>любой</strong> другой вспомогательный контент.</li>
+	</ul>
+</div></section>
+
+<section class="slide shout"><div>
+	<h2>Bower</h2>
+</div></section>
+
+<section class="slide"><div>
+	<h2>Bower</h2>
+	<ul>
+		<li>JavaScript в формате <strong>AMD</strong> или <strong>UMD</strong>;</li>
+		<li class="next">конфигурация в <strong>bower.json</strong>;</li>
+		<li class="next">пакеты устанавливаются в <strong>bower_components</strong>;</li>
+		<li class="next"><strong>плоский список</strong> зависимостей;</li>
+		<li class="next">пакет может содержать <strong>любой</strong> другой вспомогательный контент.</li>
+	</ul>
+</div></section>
+
+<section class="slide"><div>
+	<h2>npm vs. Bower</h2>
+	<table>
+		<thead>
+		<tr>
+			<th style="width: 42%;">&nbsp;</th>
+			<th style="width: 29%; text-align: center;">npm</th>
+			<th style="width: 29%; text-align: center;">Bower</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<th>Пакеты</th>
+			<td style="text-align: center;">CommonJS</td>
+			<td style="text-align: center;">AMD</td>
+		</tr>
+		<tr>
+			<th>Зависимости</th>
+			<td style="text-align: center;">дерево</td>
+			<td style="text-align: center;">список</td>
+		</tr>
+		<tr>
+			<th>Модули разных версий</th>
+			<td style="text-align: center;">да</td>
+			<td style="text-align: center;">нет</td>
+		</tr>
+		</tbody>
+	</table>
+</div></section>
+
+<section class="slide shout"><div>
+	<h2>Заключение</h2>
+</div></section>
+
+<section class="slide"><div>
+	<h2>Спасибо за внимание</h2>
+	<p><strong>Владимир Кузнецов</strong><br>
+		Twitter: <a href="http://twitter.com/mista_k">@mista_k</a><br>
+		Блог: <a href="http://noteskeeper.ru">noteskeeper.ru</a></p>
+	<p>Слайды презентации: <a href="http://mistakster.github.io/frontendconf-2015/">mistakster.github.io/frontendconf-2015</a>
 </div></section>
 
 <div class="progress">
