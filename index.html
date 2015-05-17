@@ -26,26 +26,24 @@
 	</div>
 </section>
 
-<section class="slide">
-	<div>
-		<h2>План</h2>
-		<ol>
-			<li>Модули в JavaScript — CommonJS, AMD, UMD</li>
-			<li>Репозитории модулей — npm и Bower</li>
-			<li>Инструменты для упаковки модулей:
-				<ul>
-					<li>Browserify</li>
-					<li>Webpack</li>
-				</ul>
-			</li>
-		</ol>
-	</div>
-</section>
-
 <section class="slide cover"><div>
 	<video preload="auto" autoplay loop style="width: 1024px; height: 640px;">
 		<source src="assets/video/wrong_suitcase_speed.mp4" type="video/mp4">
 	</video>
+</div></section>
+
+<section class="slide"><div>
+	<h2>План</h2>
+	<ol>
+		<li class="next">Модули в JavaScript — CommonJS, AMD, UMD</li>
+		<li class="next">Репозитории модулей — npm и Bower</li>
+		<li class="next">Инструменты для упаковки модулей:
+			<ul>
+				<li>Browserify</li>
+				<li>Webpack</li>
+			</ul>
+		</li>
+	</ol>
 </div></section>
 
 <section class="slide shout"><div>
@@ -54,15 +52,6 @@
 
 <section class="slide"><div>
 	<h2>IIFE (Immediately invoked function expression)</h2>
-	<pre>
-		<code>(function () {</code>
-		<code>  <span class="fade">/* some useful code here */</span></code>
-		<code>}());</code>
-	</pre>
-</div></section>
-
-<section class="slide"><div>
-	<h2>Immediately invoked function expression</h2>
 	<pre>
 		<code>var FooBarModule = (function () {</code>
 		<code>  return {</code>
@@ -85,22 +74,7 @@
 </div></section>
 
 <section class="slide shout"><div>
-	<h2>
-		Все знают как использовать плагины jQuery!
-	</h2>
-</div></section>
-
-<section class="slide"><div>
-	<h2>Плюсы модульного кода</h2>
-	<ul>
-		<li class="next">не захламляем глобальные переменные;</li>
-		<li class="next">каждый модуль предоставляет API для работы с ним;</li>
-		<li class="next">код приложения становится удобно обслуживать.</li>
-	</ul>
-</div></section>
-
-<section class="slide shout"><div>
-	<h2>Порядок подключения отдельных фрагментов кода</h2>
+	<h2>Все знают как использовать плагины jQuery!</h2>
 </div></section>
 
 <section class="slide"><div>
@@ -125,6 +99,10 @@
 		<code>  init.js \</code>
 		<code>    &gt; bundle.js</code>
 	</pre>
+</div></section>
+
+<section class="slide cover"><div>
+	<img src="assets/images/nothing-changes.jpg" alt="Ничего не меняется">
 </div></section>
 
 <section class="slide shout"><div>
