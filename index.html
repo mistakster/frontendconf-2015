@@ -110,17 +110,16 @@
 </div></section>
 
 <section class="slide"><div>
-	<h2>Конфигурация зависимостей модулей</h2>
+	<h2>Конфигурация зависимостей</h2>
 	<ul>
-		<li>Dojo</li>
-		<li>YUI</li>
-		<li>Самоделки <span class="next">(Например,
-			<a href="https://github.com/mistakster/app-skeleton" target="_blank">https://github.com/mistakster/app-skeleton</a>)</span></li>
+		<li>Dojo <span class="next">(перешли на AMD)</span></li>
+		<li>YUI <span class="next">(закрыли проект)</span></li>
+		<li>Самоделки</li>
 	</ul>
 </div></section>
 
 <section class="slide"><div>
-	<h2>Дерево зависимостей</h2>
+	<h2>Конфигурация зависимостей</h2>
 	<div class="col2-left">
 		<pre class="pre">
 			<code>jquery</code>
@@ -134,14 +133,14 @@
 			<code>   <span class="fade">└─</span> jquery</code>
 		</pre>
 	</div>
-	<div class="col2-right next">
+	<div class="col2-right">
 		<pre class="pre">
-			<code>jquery</code>
-			<code>underscore</code>
-			<code>backbone</code>
-			<code>item-list</code>
-			<code>autocomplete</code>
-			<code>search-widget</code>
+			<code class="next">jquery</code>
+			<code class="next">autocomplete</code>
+			<code class="next">search-widget</code>
+			<code class="next">underscore</code>
+			<code class="next">backbone</code>
+			<code class="next">item-list</code>
 		</pre>
 	</div>
 </div></section>
@@ -164,26 +163,11 @@
 	<h2>Пример CommonJS-модуля</h2>
 	<pre>
 		<code><span class="fade">/* dictionary.js */</span></code>
-		<code>exports.hello = 'Hello World!';</code>
+		<code><mark>exports</mark>.hello = 'Hello World!';</code>
 	</pre>
 	<pre>
 		<code><span class="fade">/* app.js */</span></code>
-		<code>var dictionary = require('./dictionary.js');</code>
-		<code><span class="fade">// dictionary == {&quot;hello&quot;: &quot;Hello World!&quot;};</span></code>
-		<code>console.log(dictionary.hello);</code>
-	</pre>
-</div></section>
-
-<section class="slide"><div>
-	<h2>Пример CommonJS-модуля</h2>
-	<pre>
-		<code><span class="fade">/* dictionary.js */</span></code>
-		<code><mark class="important">exports</mark>.hello = 'Hello World!';</code>
-	</pre>
-	<pre>
-		<code><span class="fade">/* app.js */</span></code>
-		<code>var dictionary = <mark class="important">require</mark>('./dictionary.js');</code>
-		<code><span class="fade">// dictionary == {&quot;hello&quot;: &quot;Hello World!&quot;};</span></code>
+		<code>var dictionary = <mark>require</mark>('./dictionary.js');</code>
 		<code>console.log(dictionary.hello);</code>
 	</pre>
 </div></section>
@@ -203,38 +187,29 @@
 	<p><a href="https://github.com/amdjs/amdjs-api" target="_blank">https://github.com/amdjs/amdjs-api</a></p>
 	<ol class="next">
 		<li>Функция <code>define</code></li>
-		<li class="next">Поле <code>define.amd</code> &mdash; объект</li>
+		<li>Поле <code>define.amd</code> &mdash; объект</li>
 	</ol>
 </div></section>
 
 <section class="slide"><div>
 	<h2>Пример AMD-модуля</h2>
 	<pre>
-		<code>define('dictionary', {</code>
+		<code><mark>define</mark>('dictionary', {</code>
 		<code>  hello: 'Hello World!';</code>
 		<code>});</code>
 	</pre>
 	<pre>
-		<code>define('app', ['dictionary'], function (dictionary) {</code>
+		<code><mark>define</mark>('app', ['dictionary'], function (dictionary) {</code>
 		<code>  console.log(dictionary.hello);</code>
 		<code>});</code>
 	</pre>
 </div></section>
 
 <section class="slide"><div>
-	<h2>Специальные зависимости</h2>
-	<ol>
-		<li>Функция <code>require</code></li>
-		<li>Объект <code>exports</code></li>
-		<li>Объект <code>module</code></li>
-	</ol>
-</div></section>
-
-<section class="slide"><div>
-	<h2>AMD используется как обёртка для CommonJS</h2>
+	<h2>AMD используется как обёртка для&nbsp;CommonJS</h2>
 	<pre>
 		<code>define(['require', 'exports', 'module'],</code>
-		<code>    function (require, exports, module) {</code>
+		<code>    function (<mark>require</mark>, <mark>exports</mark>, <mark>module</mark>) {</code>
 		<code>  var foo = require('foo'),</code>
 		<code>  exports.bar = function () {};</code>
 		<code>});</code>
@@ -261,12 +236,11 @@
 	<h2>Модули ECMAScript 2015</h2>
 	<pre>
 		<code><span class="fade">/* dictionary.js */</span></code>
-		<code><mark class="important">export</mark> const hello = 'Hello World!';</code>
+		<code><mark>export</mark> const hello = 'Hello World!';</code>
 	</pre>
 	<pre>
 		<code><span class="fade">/* app.js */</span></code>
-		<code><mark class="important">import</mark> * as dictionary from './dictionary.js';</code>
-		<code><span class="fade">// dictionary == {&quot;hello&quot;: &quot;Hello World!&quot;};</span></code>
+		<code><mark>import</mark> * as dictionary from './dictionary.js';</code>
 		<code>console.log(dictionary.hello);</code>
 	</pre>
 </div></section>
@@ -279,7 +253,7 @@
 	<pre>
 		<code>export var foo = &quot;Hello World!&quot;</code>
 		<code>export function bar() { return &quot;foobar&quot;; };</code>
-		<code class="next">export <mark class="important">default</mark> function () { return &quot;default&quot;; };</code>
+		<code class="next">export <mark>default</mark> function () { return &quot;default&quot;; };</code>
 	</pre>
 </div></section>
 
@@ -291,6 +265,10 @@
 		<code class="next">import {foo as fooVariable} from './foobar.js';</code>
 		<code class="next">import * as foobar from './foobar.js';</code>
 	</pre>
+</div></section>
+
+<section class="slide shout"><div>
+	<h2>Инструменты</h2>
 </div></section>
 
 <section class="slide shout"><div>
