@@ -397,7 +397,7 @@
 	<h2>Упаковка с общими модулями</h2>
 	<pre>
 		<code>$ browserify \</code>
-		<code>  -r jquery -r backbone -r underscore \</code>
+		<code>  -r jquery -r underscore -r backbone \</code>
 		<code>  > libs.js</code>
 	</pre>
 </div></section>
@@ -405,7 +405,7 @@
 <section class="slide"><div>
 	<h2>Упаковка для каждого SPA</h2>
 	<pre>
-		<code>$ LIBS=&quot;-x jquery -x backbone -x underscore&quot;</code>
+		<code>$ LIBS=&quot;-x jquery -x underscore -x backbone&quot;</code>
 		<code>$ browserify $LIBS editor.js > editor.bundle.js</code>
 		<code>$ browserify $LIBS viewer.js > viewer.bundle.js</code>
 	</pre>
