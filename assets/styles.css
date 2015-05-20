@@ -1,7 +1,6 @@
 .slide.intro {
     text-align: center;
-	color: white;
-	background: #52A2DF;
+	color: black;
 }
 .slide.intro:after {
     content: '';
@@ -31,4 +30,27 @@
 
 .fade {
     color: #999;
+}
+
+
+.layer-1, .layer-2, .layer-3 {
+	position: absolute;
+}
+.layer-1 {
+	width: 1024px;
+	top: 0;
+	left: 0;
+	z-index: 2;
+}
+.layer-2 {
+	width: 1024px;
+	top: 550px;
+	left: 0;
+	z-index: 3;
+}
+.layer-3 {
+	width: 704px;
+	top: 480px;
+	left: -20px;
+	z-index: 1;
 }
